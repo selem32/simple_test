@@ -12,4 +12,8 @@ open class BaseActivity : AppCompatActivity() {
     open fun teste() {
         Log.e("LOG", "TESTE_BASE_DOIS")
     }
+
+    open fun testeBitrise() {
+        Log.e("LOG", "TESTE_BASE_BITRISE")
+    }
 }
