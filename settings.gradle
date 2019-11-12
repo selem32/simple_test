@@ -1,0 +1,2 @@
+include ':app', ':designsystem'
+rootProject.name='My Application'
