@@ -9,10 +9,10 @@ apply plugin: 'maven-publish'
 publishing {
     publications {
         Production(MavenPublication) {
-            artifact("$buildDir/outputs/aar/droidils-release.aar")
+            artifact("$buildDir/outputs/aar/designsystem-release.aar")
             groupId 'com.example' // replace with your groupId
             artifactId 'designsystem' // replace with your artifactId
-            version '1.0.1'
+            version '1.0.7'
 
             //The publication doesn't know about our dependencies, so we have to manually add them to the pom
             pom.withXml {
@@ -33,22 +33,24 @@ publishing {
 
 bintray {
     // Get Bintray credential from environment variable
-    user = System.getenv('BINTRAY_USER') // Get bintray User
-    key = System.getenv('BINTRAY_API_KEY') // Get bintray Secret API Key
+//    user = System.getenv('BINTRAY_USER') // Get bintray User
+//    key = System.getenv('BINTRAY_API_KEY') // Get bintray Secret API Key
+    user = 'selem32'
+    key = 'd05ed884690f63ba09ae9a5101045706c2f145c8'
     dryRun = false
     override = false
     publish = true
     pkg {
         repo = 'maven' // replace with your Bintray repo name
         name = project.name // library module name
-        userOrg = 'selem32' // replace with your Bintray user name
+        userOrg = 'selemafonso' // replace with your Bintray user name
         licenses = ['Apache-2.0']
         desc = 'Android Simple View and Utils'
         vcsUrl = 'https://github.com/selem32/simple_test' //replace with your repo url
 
         version {
-            name = '1.0.1' //Bintray logical version name
-            vcsTag = '1.0.1'
+            name = '1.0.7' //Bintray logical version name
+            vcsTag = '1.0.7'
         }
     }
     publications = ['Production']
@@ -88,6 +90,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+ext {
+    moduleName = 'designsystem'
+}
+
 
 //apply plugin: 'com.github.dcendents.android-maven'
 //group='com.example.designsystem'
