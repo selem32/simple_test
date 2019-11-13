@@ -13,6 +13,19 @@ android:
     - extra-android-support
     - extra-google-google_play_services
 
+script:
+  - ./gradlew clean build
+  - ./gradlew generatePomFileForProductionPublication generateMetadataFileForProductionPublication bintrayUpload
+
+deploy:
+  provider: script
+  script: ./gradlew :clean :designsystem:generatePomFileForProductionPublication :designsystem:generateMetadataFileForProductionPublication :designsystem:bintrayUpload
+  skip_cleanup: true
+  dry-run: false
+  on:
+    branch: master
+  view raw.travis.yml hosted with ❤ by GitHub
+
 
 #language: android
 #
