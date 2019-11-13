@@ -19,7 +19,7 @@ script:
 
 deploy:
   provider: script
-  script: ./gradlew :clean :designsystem:generatePomFileForProductionPublication :designsystem:generateMetadataFileForProductionPublication :designsystem:bintrayUpload
+  script: ./gradlew :clean :build :designsystem:generatePomFileForProductionPublication :designsystem:generateMetadataFileForProductionPublication :designsystem:bintrayUpload
   skip_cleanup: true
   dry-run: false
   on:
