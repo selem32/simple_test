@@ -17,13 +17,13 @@ script:
   - ./gradlew clean build
   - ./gradlew generatePomFileForProductionPublication generateMetadataFileForProductionPublication bintrayUpload
 
-deploy:
-  provider: script
-  script: ./gradlew :clean :build :designsystem:generatePomFileForProductionPublication :designsystem:generateMetadataFileForProductionPublication :designsystem:bintrayUpload
-  skip_cleanup: true
-  dry-run: false
-  on:
-    branch: master
+#deploy:
+#  provider: script
+#  script: ./gradlew :clean :build :designsystem:generatePomFileForProductionPublication :designsystem:generateMetadataFileForProductionPublication :designsystem:bintrayUpload
+#  skip_cleanup: true
+#  dry-run: false
+#  on:
+#    branch: master
 
 
 #language: android
