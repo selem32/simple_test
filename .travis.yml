@@ -31,17 +31,17 @@ android:
 #  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license" // Accepting license
 #  - chmod +x gradlew // Add permission
 
-script:
-  - ./gradlew build connectedCheck
-  - ./gradlew clean build
-
-deploy:
-  provider: script
-  script: ./gradlew :clean :designsystem:assembleRelease :designsystem:bintrayUpload
-  skip_cleanup: true
-  dry-run: false
-  on:
-    branch: master
+#script:
+#  - ./gradlew build connectedCheck
+#  - ./gradlew clean build
+#
+#deploy:
+#  provider: script
+#  script: ./gradlew :clean :designsystem:assembleRelease :designsystem:bintrayUpload
+#  skip_cleanup: true
+#  dry-run: false
+#  on:
+#    branch: master
 
 #
 #language: android
